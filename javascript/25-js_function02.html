@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<style>
+</style>
+<script>
+/*
+
+    자바스크립트 내에서 특정 요소를 얻어오기
+    document.getElementBy~~~
+    ex) id가 qwer인 요소 가져오기
+        document.getElementById("qwer");
+*/
+    var num =  0;  // 그림 번호
+
+    function nextPic() {
+        num++;   // 다음 그림 번호로 이동
+        if(num > 2) {  // 마지막 그림 초과시
+            num = 0;  // 첫 그림 번호로 이동
+        }
+
+        document.getElementById("pic").src = "/javascript/images/img" + num + ".jpg";
+        // id가 pic요소(그림)의 src속성을 1증가된 num을 이용해 바꿔줌
+        return false;
+        // 그림 변경 후 링크 이동을 막기 위해 사용
+    }
+
+    // 사진을 뒤로 돌리는 로직 추가
+    function backPic() {
+        num--;
+        if(num < 0) {
+            num = 2;
+        }
+
+        document.getElementById("pic").src = "/javascript/images/img" + num + ".jpg";
+        return false;
+    }
+
+</script>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+    <h2>이미지 넘기기</h2>
+    
+    <a href="#" onclick="return backPic()"><<</a>
+    <img width="400px" height="240px" src="images/img0.jpg" id="pic">
+    <a href="#" onclick="return nextPic()">>></a>
+
+</body>
+</html>
