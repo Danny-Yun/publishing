@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<style>
+</style>
+<script>
+/*
+    01번 파일을 통해 없던 텍스트를 집어넣거나 혹은 텍스트를 교체하는 등의 로직을 연습해봤다.
+    이번에는 단순 텍스트가 아닌 element를 집어넣는 부분에 대해 알아보자
+
+    순서)
+    1. createElement를 이용해 가상 요소를 만들어준다
+    2. 가상 요소의 내용물을 필요하다면 채워준다. (텍스트 등)
+    3. DOM 요소에 appendChild를 이용해 넣어준다.
+*/
+    window.onload = function(){
+        // dom요소 생성(적용은 아직 안 됨)
+        var newPTag = document.createElement("p");
+        var newBtn1 = document.createElement("button");
+        var newBtn2 = document.createElement("button");
+        console.log(newBtn1);
+        console.log(newBtn2);
+        // 태그 내부에 들어갈 문자는, createTextNode로 만든 다음 조립해주는 형식으로 진행한다. 
+        var text1 = document.createTextNode("버튼1");
+        var text2 = document.createTextNode("버튼2");
+        
+        // 속성 생성하기
+        // id, class 등을 부여한다. 
+        // 요소명.setAttribute("속성명", "부여할 값");
+        newBtn1.setAttribute("id", "btn1");
+        newBtn2.setAttribute("id", "btn2");
+        console.log(newBtn1);
+        console.log(newBtn2);
+        
+        // 문서 조립하기
+        // p태그의 자식으로 버튼1, 2를 넣어주고,
+        // 버튼 1,2의 자식으로 text1, 2를 넣어준다.
+        newBtn1.appendChild(text1);
+        newBtn2.appendChild(text2);
+        // 조립완료된 버튼들은 p태그에 끼워넣어준다. 
+        newPTag.appendChild(newBtn1);
+        newPTag.appendChild(newBtn2);
+        console.log(newBtn1);
+        console.log(newBtn2);
+        console.log(newPTag);
+        // 자바스크립트는 위에서 밑으로 실행되지만, 변수들을 먼저 선언, 할당하고 제일 마지막에 콘솔을 출력한다.
+
+        // body태그에 ptag 끼워넣기
+        // 1. body 태그를 얻어온다
+        var bodyTag = document.getElementsByTagName("body")[0];
+        console.log(bodyTag);
+        // 2. 조립완료된 ptag를 끼워넣는다.
+        bodyTag.appendChild(newPTag);
+    }
+</script>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+    <div id="theBox">
+        <h1>요소 생성 연습</h1>
+    </div>
+</body>
+</html>
