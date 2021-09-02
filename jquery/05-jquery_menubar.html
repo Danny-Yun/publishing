@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    header, menu {
+        margin:20px;
+    }
+    li {
+        width: 130px;
+        background-color: greenyellow;
+        list-style-type: none;
+    }
+    h3 {
+        color:orange;
+    }
+</style>
+<script>
+/*
+    화면 중간에 "메뉴"라고 적힌 요소를 하나 만들고 거기에 마우스를 가져다 대면 음식메뉴가 보이게끔.
+    그리고 마우스를 메뉴라고 적힌 요소에서 치우면 보이지 않게끔.
+*/
+    $(() => {   
+        $("menu").hover(function() {
+            $(".list").css("display", "block");
+        }, function() {
+            $(".list").css("display", "none");
+        });
+    });
+
+</script>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+    <header>
+        <h3>오늘의 야식</h3>
+    </header>
+    <menu>
+        <button><b>메뉴</b></button>
+        <ul class="list">
+            <li>피자 : 20000원</li>
+            <li>치킨 : 25000원</li>
+            <li>탕수육 : 30000원</li>
+        </ul>
+    </menu>
+</body>
+</html>
