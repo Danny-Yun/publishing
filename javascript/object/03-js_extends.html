@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<style>
+</style>
+<script>
+/*
+    클래스 기반 상속
+    자바스트립트의 상속은 기본적으로 프로토타입을 활용해 상속을 구현한다.
+    키워드 기반이 아닌 프로토타입을 생성해놓고 프로토타입을 받아온 다음, 
+    거기에 필요한 추가적인 사항을 덧대서 만든다.
+*/
+    function Person(name){
+        this.name = name;
+    }
+    Person.prototype.setName = function(name){
+        this.name = name;
+    }
+    Person.prototype.getName = function(){
+        return this.name;
+    }
+
+    // 위의 부모클래스 Person을 상속한 Student를 생성
+    function Student(name, major){
+        this.major = major;
+    }
+    // 추가 메서드 선언 
+    Student.prototype.setMajor = function(major){
+        this.major = major;
+    }
+    Student.prototype.getMajor = function(){
+        return this.major;
+    }
+
+    // 아래와 같이 Student의 prototype에 Person 객체를 넣어서 상속을 흉내낸다.
+    const you = new Person("김자스");
+    Student.prototype = you;
+    
+    const faker = new Student("이상혁");
+    faker.setName("페이커");
+    console.log(faker.getName());
+    console.log(you);
+    console.log(faker);
+
+</script>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+
+</body>
+</html>
