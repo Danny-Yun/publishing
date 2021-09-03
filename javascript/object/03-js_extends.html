@@ -22,25 +22,29 @@
 
     // 위의 부모클래스 Person을 상속한 Student를 생성
     function Student(name, major){
+        //  추가 멤버변수 선언
         this.major = major;
     }
-    // 추가 메서드 선언 
+
+    // 아래와 같이 Student의 prototype에 Person 객체를 넣어서 상속을 흉내낸다.
+    const you = new Person("김자스");
+    Student.prototype = you;
+
+    // 추가 메서드 선언은 상속 이후에
+    // 상속시 prototype자체가 리셋되기 때문에
+    // 감안해서 상속을 먼저 하고 추가 메서드를 선언해준다.
     Student.prototype.setMajor = function(major){
         this.major = major;
     }
     Student.prototype.getMajor = function(){
         return this.major;
     }
-
-    // 아래와 같이 Student의 prototype에 Person 객체를 넣어서 상속을 흉내낸다.
-    const you = new Person("김자스");
-    Student.prototype = you;
     
-    const faker = new Student("이상혁");
-    faker.setName("페이커");
-    console.log(faker.getName());
+    const danny = new Student("윤지우", "컴공");
+    danny.setName("리우디우");
+    console.log(danny.getName());
     console.log(you);
-    console.log(faker);
+    console.log(danny);
 
 </script>
 <meta charset="UTF-8">

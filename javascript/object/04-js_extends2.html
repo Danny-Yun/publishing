@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<style>
+</style>
+<script>
+/*
+    Person과 그것을 상속한 요소를 2개 만들어서 활용
+*/
+    function Person(name, age){
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype.getName = function(){
+        return this.name;
+    }
+    Person.prototype.setName = function(name){
+        this.name = name;
+    }
+    Person.prototype.getAge = function(){
+        return this.age;
+    }
+    Person.prototype.setAge = function(age){
+        this.age = age;
+    }
+    
+    const person = new Person("상속베이스", 30);
+//  ----------------------------------------------- Person End 
+
+    function Developer(language){
+        this.language = language;
+    }
+    Developer.prototype = person;
+
+    Developer.prototype.getLanguage = function(){
+        return this.language;
+    }
+    Developer.prototype.setLanguage = function(language){
+        this.language = language;
+    }
+    Developer.prototype.dev = function(){
+        console.log("개발자가 " + this.language + "(으)로 개발합니다.");
+    }
+//  -------------------------------------------------- Developer End
+
+    function Chef(menu){
+        this.menu = menu;
+    }
+    Chef.prototype = person;
+
+    Chef.prototype.getMenu = function(){
+        return this.menu;
+    }
+    Chef.prototype.setMenu = function(menu){
+        this.menu = menu;
+    }
+    Chef.prototype.cooking = function(){
+        console.log("요리사가 " + this.menu + "(을)를 요리합니다.");
+    }
+//  -------------------------------------------------- Chef End
+
+    const developer = new Developer("자바스크립트");
+    console.log(developer.getLanguage());
+    developer.dev();
+
+    var chef = new Chef("짬뽕");
+    console.log(chef.getMenu());
+    chef.cooking();
+
+</script>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+
+</body>
+</html>
