@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap');
     * {
         margin: 0;
         padding: 0;
@@ -15,40 +16,66 @@
         margin: 10px;
     }
     header {
-        border: 1px solid red;
-        height: 50px;
+        background-color: lime;
+        color:#fff;
+        height: 100px;
+        line-height: 100px;
+        font-size: 65px;
     }
     main {
         display: flex;
-        height:200px;
+        height:800px;
     }
     nav {
         border: 1px solid lime;
-        width: 100px;
-        list-style-type: none;
+        width: 150px;
     }
     li {
         list-style-type: none;
+        padding-top:10px;
     }
     section {
         border: 1px solid purple;
         width: 585px;
-    
+        
+    }
+    section > p {
+        padding-top: 20px;
+        font-size: 24px;
+        font-family: 'Kaisei Tokumin', serif;
     }
     article {
         width:90%;
         margin-top: 10px;
         margin-left: 30px;
-        background-color: grey;
+        text-align: justify;
+    }
+    img {
+        width: 490px;
     }
     aside {
         border: 1px solid orange;
-        width: 150px;
+        width: 160px;
     }
     footer {
-        border: 1px solid blue;
+        background-color: #4B89DC ;
+        color: #fff;
+        line-height: 30px;
+        height: 30px;
         clear:both;
         position: relative;
+    }
+    .league {
+        background-color: cadetblue;
+        height:40px;   
+        color:#fff;
+        line-height: 35px;
+    }
+    .rank {
+        background-color: palevioletred;
+        height:40px;   
+        color:#fff;
+        line-height: 35px;
     }
 </style>
 <meta charset="UTF-8">
@@ -57,37 +84,53 @@
 <body>
     <!-- 헤더 -->
     <header>
-        <p>header</p>
+        <p><b>Football Inside</b></p>
     </header>
     <!-- 네비게이션 -->
     <main>
         <nav>
-            <p>nav</p>
+            <div class="league">
+                <p>League</p>
+            </div>
             <ul>
-                <li><a href="#">link1</a></li>
-                <li><a href="#">link2</a></li>
-                <li><a href="#">link3</a></li>
-                <li><a href="#">link4</a></li>
+                <li><a href="#">EPL</a></li>
+                <li><a href="#">LA LIGA</a></li>
+                <li><a href="#">BUNDESLIGA</a></li>
+                <li><a href="#">SERIE A</a></li>
+                <li><a href="#">LEAGUE 1</a></li>
             </ul>
         </nav>
         <!-- 컨텐츠 -->
         <section>
-            <p>section</p>
+            <p><b>Son Heung-min scored his second goal of the season in 200 games in the EPL...Tottenham's opening three consecutive wins.</b></p>
             <article>
                 <p>
-                    천지는 인간은 무한한 피부가 부패뿐이다. 불어 청춘은 이상, 무엇이 이상의 것이다. 때까지 피가 것은 싸인 청춘에서만 약동하다. 원대하고, 사랑의 이상의 인간이 풀이 열락의 노래하며 행복스럽고 말이다. 
-                    아니더면, 너의 인간의 이상, 있다. 청춘은 피는 않는 그러므로 갖 곳이 같이, 청춘의 반짝이는 청춘이 희망의 소리다.이것은 석가는 쓸쓸하랴?
+                    <img src="sonny.jpg"/><br><br/>
+                    Son Heung-min (29, Tottenham) scored his second goal of the 2021-2022 season in his 200th career Premier League (EPL) game, leading the team's opening three consecutive wins and leap forward.<br><br/>
+                    Son Heung-min started in the third round of the 2021-2022 EPL home game against Watford at Tottenham Hotspur Stadium in London on the 29th and scored the only goal of the game with a free kick in the 42nd minute of the first half.<br></br>
+                    This is Son Heung-min's second goal of the season following the winning goal in the first round of the EPL against Manchester City on the 16th.
                 </p>
             </article>
         </section>
         <!-- 사이드바 -->
         <aside>
-            <p>ad</p>
+            <div class="rank">
+                <p>rank</p>
+            </div>
+            <ul>
+                <li><a href="#">Messi, shock transfer to PSG</a></li>
+                <li><a href="#">C.Ronaldo moves to United instead of Man City.</a></li>
+                <li><a href="#">Mbappe, who was flying, collapsed from injury.</a></li>
+                <li><a href="#">Korea draw against Iraq in World Cup qualifying round</a></li>
+                <li><a href="#">Chelsea must sell Werner</a></li>
+                <li><a href="#">This year's Ballon d'Or is Jorginho?</a></li>
+                <li><a href="#">Transfer of Kang-in Lee to Majorca</a></li>
+            </ul>
         </aside>
     </main>
     <!-- 푸터 -->
     <footer>
-        <p>footer</p>
+        <p>Copyright 2021. footballMagazine All rights reserved.</p>
     </footer>
 </body>
 </html>
